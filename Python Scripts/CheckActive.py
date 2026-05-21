@@ -1,14 +1,12 @@
-def check_active():
+active = False
+
+def set_active():
+    global active
     active = True
-    print("Session Active: y/n")
-    user_input = input().lower()
 
-    while user_input != "y" and user_input != "n":
-        user_input = input().lower()
-    
-    if user_input == "y":
-        active = True
-    else: 
-        active = False
+def set_deactive():
+    global active
+    active = False
 
+def is_active():
     return active
