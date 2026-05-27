@@ -16,6 +16,11 @@ def update_clock():
 
     root.after(1000, update_clock)
 
+def test_input():
+    name = name_entry.get()
+    task = task_entry.get()
+    output_label.config(text=f"Hello {name}. Good luck with {task}")
+
 #GUI
 root = tk.Tk()
 root.title("Session Dashboard")
@@ -33,6 +38,24 @@ start_button.pack(pady=5)
 
 stop_button = tk.Button(root, text="Stop", command=set_deactive)
 stop_button.pack(pady=5)
+
+name_label = tk.Label(root, text="Name")
+name_label.pack()
+
+name_entry = tk.Entry(root)
+name_entry.pack()
+
+task_label = tk.Label(root, text="Task")
+task_label.pack()
+
+task_entry = tk.Entry(root)
+task_entry.pack()
+
+test_button = tk.Button(root, text="Submit", command=test_input)
+test_button.pack()
+
+output_label = tk.Label(root, text="")
+output_label.pack()
 
 update_clock()
 
